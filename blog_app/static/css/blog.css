@@ -1,6 +1,9 @@
 body {
     margin: 0;
+    box-sizing: border-box;
     font-family: 'Baskervville', serif;
+    padding: 0;
+    height: 100%;
 }
 
 .container {
@@ -12,29 +15,31 @@ body {
     padding: 2%;
     width: 25vw;
     height: 100vh;
-    justify-content: center;
     background-color: #0CBABA;
     position: fixed;
     color: white;
 }
 
-.sidebar a {
-    color: white;
+.sidebar .brand {
     text-decoration: none;
-
+    font-weight: bolder;
+    font-size: 2.5rem;
+    font-family: 'Rochester', cursive;
+    text-align: center;
+    display: block;
 }
 
 .sidebar li {
     list-style: square;
-
 }
 
-.sidebar .brand {
+.sidebar a {
+    color: white;
     text-decoration: none;
-    font-weight: bolder;
-    font-size: 2rem;
-    text-align: center;
-    font-family: 'Rochester', cursive;
+}
+
+.sidebar-header {
+    color: purple;
 }
 
 .content {
@@ -47,6 +52,14 @@ body {
     border-radius: 4px;
     padding: 5px;
     height: 200px;
+}
+
+.card-img-top-detail {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 15px 15px 5px 0;
+    padding: 5px;
+    height: 300px;
 }
 
 .blog-list-container {
@@ -64,7 +77,8 @@ body {
     border: 1px solid purple;
     padding: 5px;
     border-radius: 5px;
-    color: purple;
+    color: white;
+    background-color: purple;
 }
 
 .date {
@@ -81,10 +95,25 @@ body {
     color: #0CBABA;
 }
 
+.post-title-detail {
+    text-decoration: none;
+    font-weight: bolder;
+    color: #0CBABA;
+}
+
 .post-content {
     display: flex;
 }
 
 .post-body {
     padding: 10px;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: auto;
+}
+
+.fa-chevron-circle-right .fa-chevron-circle-left {
+    color: purple;
 }

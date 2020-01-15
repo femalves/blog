@@ -9,13 +9,12 @@ Lit
 
 <div class="blogs">
     {% if tag %}
-        <h2 >Posts tagged with "{{ tag.name }}"</h2>
+        <h2 >Posts tagged with "{{ tag.name }}":</h2>
     {% endif %}
 
 
         {% for post in posts %}
             <div class="blog-list-container">
-
                 <div class="post-content">
                     <img class="card-img-top" src="{{ post.img.url }}" alt="">
                     <div class="post-body">

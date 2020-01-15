@@ -5,9 +5,12 @@
 {{ post.title }}
 {% endblock title %}
 {% block content %}
-    <h1>{{ post.title }}</h1>
+    <h1 class="post-title-detail">{{ post.title }}</h1>
     <p class="date">Published {{post.publish}} by {{ post.author }}</p>
-    {{post.body|markdown}}
+    <div class="post-content">
+        <img class="card-img-top-detail" src="{{ post.img.url }}" alt="">
+        {{post.body|markdown}}
+    </div>
     <p><a href="{% url "blog:post_share" post.id %}"> Share this post </a></p>
     {% with comments.count as total_comments %}
         <h2>{{ total_comments }} comment{{ total_comments|pluralize }}</h2>
