@@ -3,7 +3,10 @@ body {
     box-sizing: border-box;
     font-family: 'Baskervville', serif;
     padding: 0;
-    height: 100%;
+}
+
+a {
+    text-decoration: none !important;
 }
 
 .container {
@@ -70,6 +73,7 @@ body {
 
 .tags {
     font-size: .8rem;
+    display: flex;
 }
 
 .tag-item {
@@ -79,6 +83,7 @@ body {
     border-radius: 5px;
     color: white;
     background-color: purple;
+    margin: -6px 2px;
 }
 
 .date {
@@ -107,13 +112,74 @@ body {
 
 .post-body {
     padding: 10px;
+
+}
+
+.post-body-detail {
+    padding: 10px;
+    margin-right: 20px;
+    text-align: justify;
 }
 
 .pagination {
     text-align: center;
-    margin-top: auto;
+    bottom: 0;
+    margin-top: 35%;
+
 }
 
 .fa-chevron-circle-right .fa-chevron-circle-left {
     color: purple;
+}
+
+.comment {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0 0 0 10px;
+    margin: 10px 0 0 0;
+
+}
+
+.info .author {
+    font-weight: bolder;
+    color: purple;
+}
+
+.fa-user-circle {
+    color: purple;
+    margin: 2px;
+}
+
+.detail-header {
+    color: purple;
+}
+
+.similar-posts {
+    text-decoration: none;
+    color: #0CBABA;
+}
+
+.share {
+    text-decoration: none;
+    color: purple;
+}
+
+.uk-button-default {
+    background-color: #0CBABA;
+    color: #fff;
+    font-weight: 1.3em;
+
+}
+
+.general-title {
+    color: #0CBABA;
+}
+
+.general-paragraph {
+    color: purple;
+}
+
+.general-paragraph-link {
+    text-decoration: underline;
+    color: purple !important;
 }

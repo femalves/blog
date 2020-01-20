@@ -2,13 +2,15 @@
    {% block title %}Share a post{% endblock %}
    {% block content %}
      {% if sent %}
-       <h1>E-mail successfully sent</h1>
-       <p>
-         "{{ post.title }}" was successfully sent to {{ form.cleaned_data.to }}.
+       <h1 class='general-title'>E-mail successfully sent!</h1>
+       <p class='general-paragraph'>
+         <a class='general-paragraph-link' href="{{ post.get_absolute_url }}">{{ post.title }}</a> was successfully sent to {{ form.cleaned_data.to }}.
        </p>
      {% else %}
-       <h1>Share "{{ post.title }}" by e-mail</h1>
+       <h1 class='post-title'>{{ post.title }}</h1>
+       <h3 class="general-title"> Share <i class="fas fa-share"></i></h3>
        <form action="." method="post">
+       <fieldset class="uk-fieldset">
         {% for field in form %}
             <div>
                 {{ field.errors }}
@@ -16,9 +18,10 @@
                 {{ field.label_tag }} {{ field }}
             </div>
         {% endfor %}
-         {% comment %} {{ form.as_p }} {% endcomment %}
+
          {% csrf_token %}
-         <input type="submit" value="Send e-mail">
+
+         <button type="submit" class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" value="Share">Share</button>
        </form>
      {% endif %}
 {% endblock %}

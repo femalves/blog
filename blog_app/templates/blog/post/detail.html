@@ -9,33 +9,55 @@
     <p class="date">Published {{post.publish}} by {{ post.author }}</p>
     <div class="post-content">
         <img class="card-img-top-detail" src="{{ post.img.url }}" alt="">
-        {{post.body|markdown}}
+        <div class="post-body-detail">{{post.body|markdown}}</div>
     </div>
-    <p><a href="{% url "blog:post_share" post.id %}"> Share this post </a></p>
-    {% with comments.count as total_comments %}
+    <p><a class="share" href="{% url "blog:post_share" post.id %}"><i class="fas fa-share"></i> Share this post </a></p>
+    {% comment %} {% with comments.count as total_comments %}
         <h2>{{ total_comments }} comment{{ total_comments|pluralize }}</h2>
-    {% endwith %}
-    <h2>Similar posts</h2>
+    {% endwith %} {% endcomment %}
+    <h2 class="detail-header">Similar posts</h2>
     {% for post in similar_posts %}
     <p>
-    <a href="{{ post.get_absolute_url }}">{{ post.title}}</a>{% empty %} There are no similar posts yet.</p>
+    <a class="similar-posts" href="{{ post.get_absolute_url }}">{{ post.title}}</a>{% empty %} There are no similar posts yet.</p>
     {% endfor %}
+
+    <h2 class="detail-header"> Comments </h2>
     {% for comment in comments %}
         <div class="comment">
-        <p class="info">
-            Comment {{ forloop.counter }} by {{ comment.name }}
-            {{ comment.created}}
-        </p>
-            {{ comment.body|linebreaks }}
+            <p class="info">
+                <i class="fas fa-user-circle"></i><span class="author">{{ comment.name }} </span> <span class="date"> on {{ comment.created}}</span>
+            </p>
+            <p class="comment-body">{{ comment.body|linebreaks }}</p>
         </div>
     {% empty %}
-        <p>There are no comments yet.</p>
+        <p class='general-paragraph'>There are no comments yet.</p>
     {% endfor %}
 
     {% if new_comment %}
-        <h2>Your comment has been added.</h2>
+        <h2 class='general-title'>Your comment has been added.</h2>
     {% else %}
-        <h2>Add a new comment</h2>
-        <form action="." method="post">{{comment_form.as_p }} {% csrf_token %} <p><input type="submit" value="Add comment"></form>
+        <h2 class="detail-header">Add a new comment</h2>
+
+         <form method="post">
+
+            <fieldset class="uk-fieldset">
+                {% csrf_token %}
+
+                <div class="uk-margin">
+                    {{ comment_form.name}}
+                </div>
+
+                <div class="uk-margin">
+                    {{ comment_form.email}}
+                </div>
+
+                <div class="uk-margin">
+                    {{ comment_form.body}}
+                </div>
+
+                <button type="submit" class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" value="Add comment">Comment</button>
+            </fieldset>
+        </form>
+
     {% endif %}
 {% endblock content %}
