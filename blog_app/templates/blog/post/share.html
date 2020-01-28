@@ -2,26 +2,26 @@
    {% block title %}Share a post{% endblock %}
    {% block content %}
      {% if sent %}
-       <h1 class='general-title'>E-mail successfully sent!</h1>
-       <p class='general-paragraph'>
-         <a class='general-paragraph-link' href="{{ post.get_absolute_url }}">{{ post.title }}</a> was successfully sent to {{ form.cleaned_data.to }}.
-       </p>
+      <h1 class='general-title'>E-mail successfully sent!</h1>
+      <p class='general-paragraph'>
+        <a class='general-paragraph-link' href="{{ post.get_absolute_url }}">{{ post.title }}</a> was successfully sent to {{ form.cleaned_data.to }}.
+        <p><a class='general-paragraph-link' href="{% url 'blog:post_list'%}"><i class="fas fa-home"></i></a></p>
+      </p>
      {% else %}
-       <h1 class='post-title'>{{ post.title }}</h1>
+       <h1 class='uk-link-heading'>{{ post.title }}</h1>
        <h3 class="general-title"> Share <i class="fas fa-share"></i></h3>
        <form action="." method="post">
        <fieldset class="uk-fieldset">
         {% for field in form %}
-            <div>
+            <div class="uk-margin">
                 {{ field.errors }}
-                <br>
-                {{ field.label_tag }} {{ field }}
+                {{ field }}
             </div>
         {% endfor %}
 
-         {% csrf_token %}
+        {% csrf_token %}
 
-         <button type="submit" class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" value="Share">Share</button>
+        <button type="submit" class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" value="Share">Share</button>
        </form>
      {% endif %}
 {% endblock %}

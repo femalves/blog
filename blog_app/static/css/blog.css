@@ -1,3 +1,4 @@
+/* General */
 body {
     margin: 0;
     box-sizing: border-box;
@@ -5,21 +6,38 @@ body {
     padding: 0;
 }
 
-a {
-    text-decoration: none !important;
+/* Ui-kit */
+
+.uk-card-default .uk-card-title {
+    text-decoration: none;
+    font: 1.3em sans-serif;
+    font-weight: bolder;
+    color: #0CBABA;
 }
 
-.container {
-    display: flex;
+.uk-button.uk-button-default.uk-button-small {
+    background-color: purple;
+    color: #fff;
 }
 
-.sidebar {
-    margin: 0;
-    padding: 2%;
-    width: 25vw;
-    height: 100vh;
+.uk-heading-small {
+    color: #0CBABA;
+}
+
+.uk-button.uk-button-default.uk-width-1-1.uk-margin-small-bottom {
     background-color: #0CBABA;
-    position: fixed;
+    color: #fff;
+}
+
+.uk-link-text {
+    color: purple;
+}
+
+/* Sidebar */
+
+.sidebar.uk-first-column {
+    padding: 20px;
+    background-color: #0CBABA;
     color: white;
 }
 
@@ -32,18 +50,45 @@ a {
     display: block;
 }
 
-.sidebar li {
-    list-style: square;
-}
-
 .sidebar a {
     color: white;
     text-decoration: none;
 }
 
+.sidebar li {
+    list-style: none;
+}
+
 .sidebar-header {
     color: purple;
 }
+
+/*
+.uk-button-default .uk-link-heading {
+    background-color: #0CBABA;
+    color: #fff;
+    margin-top: 10px;
+    border-radius: 5px;
+
+} */
+
+/* a {
+    text-decoration: none !important;
+}
+
+.container {
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
 
 .content {
     padding: 15px 15px 15px 40vw;
@@ -164,12 +209,7 @@ a {
     color: purple;
 }
 
-.uk-button-default {
-    background-color: #0CBABA;
-    color: #fff;
-    font-weight: 1.3em;
 
-}
 
 .general-title {
     color: #0CBABA;
@@ -182,4 +222,4 @@ a {
 .general-paragraph-link {
     text-decoration: underline;
     color: purple !important;
-}
+} */
