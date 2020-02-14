@@ -32,7 +32,6 @@
                 <h2><a class="brand" href="{% url 'blog:post_list'%}">Lit</a></h2>
                 <p>Book reviews blog.</p>
                 <p> {% total_posts %} reviews so far.</p>
-                <p><a href="{% url "blog:post_feed"%}">Subscribe to my RSS feed</a></p>
                 <h3 class="sidebar-header">Latest reviews</h3>
                 {% show_latest_posts 3 %}
                 <h3 class="sidebar-header">Most commented posts</h3>
