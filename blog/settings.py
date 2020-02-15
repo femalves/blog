@@ -24,7 +24,7 @@ SECRET_KEY = '64s+jbj&(0m)4&-a4f&i1%5pv_3$tp&0zn)wm5n9a2e3sw20h9'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 SITE_ID = 1
 # Application definition
