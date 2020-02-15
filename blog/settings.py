@@ -18,13 +18,16 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
-SECRET_KEY = '64s+jbj&(0m)4&-a4f&i1%5pv_3$tp&0zn)wm5n9a2e3sw20h9'
+# SECRET_KEY = '64s+jbj&(0m)4&-a4f&i1%5pv_3$tp&0zn)wm5n9a2e3sw20h9'
+SECRET_KEY = os.environ.get(
+    'SECRET_KEY', '64s+jbj&(0m)4&-a4f&i1%5pv_3$tp&0zn)wm5n9a2e3sw20h9')
 
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost',
+                 '127.0.0.1',            'blogbyfernanda.herokuapp.com']
 
 SITE_ID = 1
 # Application definition
@@ -133,12 +136,19 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # location where you will store your static files
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'blog/static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'blog_app/static')]
 # Media Folder Settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = os.environ.get(
+    'DJANGO_EMAIL_BACKEND', 'django.core.mail.backends.console.EmailBackend')
+
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
 
 # if not os.path.isdir(STATIC_ROOT):
 #     os.makedirs(STATIC_ROOT, mode=0o755)
