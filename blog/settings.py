@@ -57,7 +57,6 @@ MIDDLEWARE = [
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
 ROOT_URLCONF = 'blog.urls'
 
 TEMPLATES = [
@@ -141,14 +140,10 @@ MEDIA_URL = '/media/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+# if not os.path.isdir(STATIC_ROOT):
+#     os.makedirs(STATIC_ROOT, mode=0o755)
+
 try:
     from .local_settings import *
 except ImportError:
     pass
-
-
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
-
-if not os.path.isdir(STATIC_ROOT):
-    os.makedirs(STATIC_ROOT, mode=0o755)
