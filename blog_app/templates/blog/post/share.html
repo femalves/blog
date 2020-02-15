@@ -8,8 +8,8 @@
         <p><a class='general-paragraph-link' href="{% url 'blog:post_list'%}"><i class="fas fa-home"></i></a></p>
       </p>
      {% else %}
-       <h1 class='uk-link-heading'>{{ post.title }}</h1>
-       <h3 class="general-title"> Share <i class="fas fa-share"></i></h3>
+       <h1 class="uk-heading-small">{{ post.title }}</h1>
+       <h3 class="uk-link-text"> Share <i class="fas fa-share"></i></h3>
        <form action="." method="post">
        <fieldset class="uk-fieldset">
         {% for field in form %}

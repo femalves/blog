@@ -6,6 +6,10 @@ body {
     padding: 0;
 }
 
+a {
+    text-decoration: none !important;
+}
+
 /* Ui-kit */
 
 .uk-card-default .uk-card-title {
@@ -63,6 +67,10 @@ body {
     color: purple;
 }
 
+a .fas {
+    color: purple;
+}
+
 /*
 .uk-button-default .uk-link-heading {
     background-color: #0CBABA;
@@ -72,23 +80,11 @@ body {
 
 } */
 
-/* a {
-    text-decoration: none !important;
-}
+/*
 
 .container {
     display: flex;
 }
-
-
-
-
-
-
-
-
-
-
 
 .content {
     padding: 15px 15px 15px 40vw;
@@ -173,9 +169,7 @@ body {
 
 }
 
-.fa-chevron-circle-right .fa-chevron-circle-left {
-    color: purple;
-}
+
 
 .comment {
     border: 1px solid #ddd;
@@ -190,10 +184,7 @@ body {
     color: purple;
 }
 
-.fa-user-circle {
-    color: purple;
-    margin: 2px;
-}
+
 
 .detail-header {
     color: purple;
