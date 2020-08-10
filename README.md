@@ -13,8 +13,7 @@
 ___
 <br>
 
-![Blog image](<img width="1280" alt="Screen Shot 2020-08-10 at 11 25 15" src="https://user-images.githubusercontent.com/9547354/89794482-7a338800-dafd-11ea-8c94-8b8ed21974b7.png">
-)
+![Blog image](<img width="1280" alt="Screen Shot 2020-08-10 at 11 25 15" src="https://user-images.githubusercontent.com/9547354/89794482-7a338800-dafd-11ea-8c94-8b8ed21974b7.png">)
 
 ## :japanese_ogre: Demo Web
 
