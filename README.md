@@ -46,7 +46,7 @@ ___
 - Pagination
 - Sitemap
 
-### :running: How to rum
+### :running: How to run
 
 ```bash
 
