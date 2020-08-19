@@ -37,6 +37,8 @@ ___
 - [Font Awesome](https://fontawesome.com/)
 - [UIKit](https://getuikit.com/)
 
+### :rocket: Deployed to [Heroku](http://www.heroku.com/)
+
 ### :gear: Functionalities
 - Add, remove, edit blog post
 - Django admin page
@@ -65,7 +67,6 @@ $ pip install -r requirements.txt
 
 # Run migrations
 $ python manage.py makemigrations
-$ python manage.py makemigrations blog_app
 $ python manage.py migrate
 
 # Start local server
